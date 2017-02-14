@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="关键字">
+  <meta name="Description" content="描述信息">
+  <title>你是我的世界，我的世界是你</title>
+  <style type="text/css">
+  *{margin:0;padding-left:0;}
+  html,body{height: 100%;background:url(image/bg.jpg);background-size: 100%;overflow: hidden;}
+  .box{
+    width:280px;
+    height:36px;
+    margin:80px auto;
+    font-size: 40px;
+  }
+  .content{
+    width:310px;height:400px;margin:0px auto;perspective:800px;
+  }
+  .content .pic{
+    position: relative;transform-style:preserve-3d;animation:ranA 5s linear infinite;
+  }
+  .content .pic ul{
+    list-style-type: none;
+  }
+  .content .pic ul li{
+    position:absolute;top:0;left:0;transiton:0.2s;
+  }
+  .content .pic ul li:hover img{transform:scale(1.4);transition:0.2s;}
+  .text{
+    width:680px;height:220px;margin:auto;font-size: 20px;font-family: "华文行楷";
+    color:transparent;background: -webkit-linear-gradient(45deg,#ff0000,#ffcc00,#ffff00,#00cc66,#99ffcc,#3333cc,#6600ff);-webkit-background-clip:text;  
+  }
+
+
+/*关键帧*/
+  @keyframes ranA{
+from{transform:rotateY(Odeg);}
+to{transform:rotateY(-360deg);}
+  }
+  </style>
+</head>
+<body>
+  <!-- start box -->
+  <div class="box">
+    <marquee behavior="alternate">I LOVE YOU</marquee>
+  </div>
+  <!-- end box -->
+  <!-- start content -->
+  <div class="content">
+    <div class="pic">
+      <ul>
+        <li><img src="image/1.jpg" alt=""/></li>
+        <li><img src="image/2.jpg" alt=""/></li>
+        <li><img src="image/3.jpg" alt=""/></li>
+        <li><img src="image/4.jpg" alt=""/></li>
+        <li><img src="image/5.jpg" alt=""/></li>
+        <li><img src="image/6.jpg" alt=""/></li>
+      </ul>
+    </div>
+  </div>
+<!-- end content -->
+  <div class="text" id="txt">
+    
+  </div>
+  <embed src="gaobai.mp3">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+var Deg=360/$(".pic ul li").size();
+  $(".pic ul li").each(function(i){//遍历
+    $(this).css({
+      "transform":"rotateY("+i*60+"deg)translateZ(216px)"
+  });
+});
+var i=0;
+var str="能够遇见你是我最大的幸运，你让我的生活丰富多彩，你是我的世界，我的世界是你"
+window.onload=function typing(){
+  var mydiv=document.getElementById("txt");
+  mydiv.innerHTML+=str.charAt(i);
+  i++;
+  var id=setTimeout(typing,100);
+  if(i==str.length){
+    clearTimeout(id,100);
+  }
+
+}
+</script>
+
+</body>
+</html>
