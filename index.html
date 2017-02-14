@@ -18,7 +18,7 @@
     width:310px;height:400px;margin:0px auto;perspective:800px;
   }
   .content .pic{
-    position: relative;transform-style:preserve-3d;animation:ranA 5s linear infinite;
+    position: relative;-webkit-transform-style:preserve-3d;animation:ranA 5s linear infinite;
   }
   .content .pic ul{
     list-style-type: none;
@@ -26,7 +26,7 @@
   .content .pic ul li{
     position:absolute;top:0;left:0;transiton:0.2s;
   }
-  .content .pic ul li:hover img{transform:scale(1.4);transition:0.2s;}
+  .content .pic ul li:hover img{-webkit-transform:scale(1.4);transition:0.2s;}
   .text{
     width:680px;height:220px;margin:auto;font-size: 20px;font-family: "华文行楷";
     color:transparent;background: -webkit-linear-gradient(45deg,#ff0000,#ffcc00,#ffff00,#00cc66,#99ffcc,#3333cc,#6600ff);-webkit-background-clip:text;  
@@ -69,7 +69,7 @@ to{transform:rotateY(-360deg);}
 var Deg=360/$(".pic ul li").size();
   $(".pic ul li").each(function(i){//遍历
     $(this).css({
-      "transform":"rotateY("+i*60+"deg)translateZ(216px)"
+      "-webkit-transform":"rotateY("+i*60+"deg)translateZ(216px)"
   });
 });
 var i=0;
